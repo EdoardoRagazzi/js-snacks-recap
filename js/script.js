@@ -10,13 +10,25 @@
 
 array = [3, 4, 2, 1, 56, 86, 45];
 
-var arrayNew = nuovoArray(array, min, max)
+var arrayNew = nuovoArray(array, 4, 5);
 
+console.log(arrayNew);
 
 function nuovoArray(array, min, max) {
     newArray = [];
-    for (var i = min - 1; i < max; i++) {
-        newArray.push(array[i]);
-    }
+    array.forEach((element, index) => {
+
+        if (min <= index <= max) {
+            newArray.push(array[index]);
+        }
+        return newArray;
+    });
     return newArray;
-};
+}
+// function nuovoArray(array, min, max) {
+//     newArray = [];
+//     for (var i = min - 1; i < max; i++) {
+//         newArray.push(array[i]);
+//     }
+//     return newArray;
+// };
