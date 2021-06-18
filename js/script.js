@@ -9,22 +9,14 @@
 // mi restituisce a [11,6,77]
 
 array = [3, 4, 2, 1, 56, 86, 45];
-
-var arrayNew = nuovoArray(array, 4, 5);
+var min = parseInt(prompt('Inserisci un numero'));
+var max = parseInt(prompt('Inserisci un numero'));
+var arrayNew = nuovoArray(array, min, max);
 
 console.log(arrayNew);
 
-function nuovoArray(array, min, max) {
-    newArray = [];
-    array.forEach((element, index) => {
+//--------FUNCTION WITH FOR-------//
 
-        if (min <= index <= max) {
-            newArray.push(array[index]);
-        }
-        return newArray;
-    });
-    return newArray;
-}
 // function nuovoArray(array, min, max) {
 //     newArray = [];
 //     for (var i = min - 1; i < max; i++) {
@@ -32,3 +24,29 @@ function nuovoArray(array, min, max) {
 //     }
 //     return newArray;
 // };
+
+//--------FUNCTION FOR EACH-------//
+
+function nuovoArray(array, min, max) {
+    newArray = [];
+    array.forEach((element, index) => {
+        if (min <= index <= max) {
+            newArray.push(element);
+        }
+        return newArray;
+    });
+    return newArray;
+}
+
+//--------FUNCTION FILTER-------//
+
+function myFunction(array, min, max) {
+    newArray = [];
+    array.filter((element, index) => {
+        if (index >= min && index <= max) {
+            newArray.push(element);
+        }
+        return newArray;
+    });
+    return newArray;
+}
